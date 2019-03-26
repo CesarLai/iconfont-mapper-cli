@@ -1,14 +1,14 @@
 {
-  "name": "font-mapper",
+  "name": "iconfont-mapper-cli",
   "version": "1.0.0",
   "description": "针对react-native-vector-icons库实现的字符映射文件生成工具",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node bin/cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "font-mapper": "index.js"
+    "iconfont-mapper": "bin/cli.js"
   },
   "author": "Cesar Lai",
   "license": "ISC",
