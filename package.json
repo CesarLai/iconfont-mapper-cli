@@ -1,6 +1,6 @@
 {
   "name": "iconfont-mapper-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "一个Iconfont图标映射文件生成工具。",
   "main": "bin/cli",
   "scripts": {
