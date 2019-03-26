@@ -12,7 +12,7 @@ var OUTPUT_FILE_DIR = path.join(os.homedir(), 'Downloads');
 
 // 设置命令参数
 var argv = yargs
-    .usage('Usage: font-mapper [options]')
+    .usage('Usage: iconfont-mapper [options]')
     .options({
         'help': {
             alias: 'h',
