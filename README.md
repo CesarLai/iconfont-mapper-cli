@@ -44,9 +44,15 @@ $ npm install -g iconfont-mapper-cli
 
 # 使用当前目录的css文件生成json文件
 $ iconfont-mapper -f iconfont.css
+输出路径：./iconfont.json
 
 # 使用指定目录的css文件生成json文件
 $ iconfont-mapper -f C:\Users\Administrator\Downloads\iconfont.css
+输出路径：C:\Users\Administrator\Downloads\iconfont.json
+
+# 使用指定目录的css文件生成json文件，并保存到指定的输出路径
+$ iconfont-mapper -f C:\Users\Administrator\Downloads\iconfont.css -o C:\Users\Administrator\Desktop
+输出路径：C:\Users\Administrator\Desktop\iconfont.json
 ```
 
 [npm-image]: https://img.shields.io/npm/v/iconfont-mapper-cli.svg

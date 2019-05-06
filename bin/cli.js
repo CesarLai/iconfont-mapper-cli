@@ -79,8 +79,8 @@ function fontMapper(filePath, outputDir) {
             var outputFileFullPath = '';
             // 未指定输出路径时，默认输出到导入文件的所在目录
             if (!outputDir) outputDir = path.dirname(filePath);
-
-            if (path.isAbsolute(outputDir)) {
+            
+            if (outputDir === '.' || path.isAbsolute(outputDir)) {
                 outputFileFullPath = path.join(outputDir, baseName);
             } else {
                 outputFileFullPath = path.join(OUTPUT_FILE_DIR, baseName);
