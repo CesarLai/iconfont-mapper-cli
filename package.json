@@ -1,13 +1,18 @@
 {
   "name": "iconfont-mapper-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "一个Iconfont图标映射文件生成工具。",
   "main": "bin/cli",
   "scripts": {
     "start": "node bin/cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["iconfont", "node", "cli", "react-native-vector-icons"],
+  "keywords": [
+    "iconfont",
+    "node",
+    "cli",
+    "react-native-vector-icons"
+  ],
   "bin": {
     "iconfont-mapper": "bin/cli.js"
   },

@@ -24,20 +24,25 @@ var argv = yargs
         },
         'file': {
             alias: 'f',
-            describe: '根据包含图标样式的css文件生成包含所有图标映射信息的json文件',
-            nargs: 1,
+            describe: '包含图标样式的css文件路径',
+            type: 'string'
+        },
+        'output': {
+            alias: 'o',
+            describe: '图标映射json文件的生成目录',
             type: 'string'
         }
     })
     .argv;
 
-argv.f && fontMapper(argv.f);
+argv.f && fontMapper(argv.f, argv.o);
 
 /**
- * 
- * @param {string} filePath 
+ * 映射文件生成方法
+ * @param {string} filePath 导入的css文件路径
+ * @param {string} outputDir json文件输出路径（不包含json文件名）
  */
-function fontMapper(filePath) {
+function fontMapper(filePath, outputDir) {
     if (path.extname(filePath) !== '.css') {
         console.log('文件格式不正确，请输入css文件的路径。');
         return;
@@ -71,7 +76,16 @@ function fontMapper(filePath) {
             }
 
             // 输出json文件
-            var outputFileFullPath = path.join(OUTPUT_FILE_DIR, baseName);
+            var outputFileFullPath = '';
+            // 未指定输出路径时，默认输出到导入文件的所在目录
+            if (!outputDir) outputDir = path.dirname(filePath);
+
+            if (path.isAbsolute(outputDir)) {
+                outputFileFullPath = path.join(outputDir, baseName);
+            } else {
+                outputFileFullPath = path.join(OUTPUT_FILE_DIR, baseName);
+            }
+
             fs.writeFile(outputFileFullPath, JSON.stringify(jsonObject), 'utf8', (error) => {
                 if (error) {
                     console.log(`json文件生成失败，原因：${error.message}。`);
